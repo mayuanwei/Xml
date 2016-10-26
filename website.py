@@ -8,7 +8,8 @@ class Dispatcher:
         dname = 'default' + prefix.capitalize()
         method = getattr(self,mname,None)
         if callable(method):arg = ()
-        else:            method = getattr(self,dname,None)
+        else:
+            method = getattr(self,dname,None)
             arg = name,
         if prefix == 'start':arg += attrs,
         if callable(method):method(*arg)
